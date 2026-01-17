@@ -32,7 +32,6 @@
 
 </html>
 
-<!-- 06 - 變數(變量) variable -->
  <!DOCTYPE html>
  <html>
     <head>
@@ -40,6 +39,7 @@
     </head>
     <body>
         <script>
+            //// 06 - 變數(變量) variable
             let name = "小綠";      // JS中變數名稱不能被重複定義
             let number = 3;
             /* 變數命名規則
@@ -47,6 +47,88 @@
             2. 開頭不能是數字
             3. 不能用特殊符號，除非: "$"、"_"
             */
+
+            //// 10 - 變數(變量) variable
+            // 是 否
+            // 真 假
+            let isUser = false;
+            let num1 = 2;
+            let num2 = 2;
+            console.log(num1 !== num2);     // "==="為JS中的相等判斷
+            console.log(5+1 > 2+3);         // 會先進行相加後再比大小
+
+            //// 11 - if 判斷式
+            // 如果下雨 我就開車去上班
+            // let isRain = true;
+            // if (isRain) {
+            //     console.log("我就開車去上班");
+            //     console.log("你好");
+            // }
+
+            // 如果下雨 我就開車去上班
+            // 否則     我就走路去上班
+            let isRain = false;
+            if (isRain) {
+                console.log("我就開車去上班");
+                console.log("你好");
+            } else {
+                console.log("我就走路去上班");
+            }
+
+            //  如果bmi < 18.5 則過輕
+            //  否則            沒有過輕
+
+            // let bmi = 18;
+            // if (bmi < 18.5) {
+            //     console.log("過輕");    
+            // } else {
+            //     console.log("沒有過輕");
+            // }
+
+            // 如果bmi < 18.5    則過輕
+            // 或是如果bmi < 27  則正常
+            // 或是如果bmi < 35  則過重
+            // 否則              超重
+
+            // let bmi = 40;
+            // if (bmi < 18.5) {
+            //     console.log("過輕");
+            // } else if (bmi < 27) {
+            //     console.log("正常");
+            // } else if (bmi < 35) {
+            //     console.log("過重");
+            // } else {
+            //     console.log("超重");
+            // }
+
+            
+            //// 12 - 邏輯運算 且&& 或|| 非!
+            
+            // 如果18.5 <= bmi < 27     則正常
+
+            // let bmi = 30;
+            // if (18.5 <= 30 < 27) {  // 這邊會先比"18.5 <= 30"結果會是true，true在跟<27比，此時true會變成1，所以會小於27，會後輸出就會是正常
+            //     console.log("正常");
+            // }
+
+            // 18.5 <= bmi 且 bmi > 27    則正常
+
+            // let bmi = 30;
+            // if (18.5 <= bmi && bmi < 27) {  // &&左右兩邊會分別得到true, false，true跟false再去進行&&就會得到false，所以這邊並不會print out"正常"
+            //     console.log("正常");
+            // }
+
+            // 如果 bmi < 10 或 bmi > 100   則測量錯誤
+
+            let bmi = 20;
+            if (bmi < 10 || bmi > 100) {
+                console.log("測量錯誤");
+            }
+
+            
+
+
+
         </script>
     </body>
  </html>
