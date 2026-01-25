@@ -17,16 +17,8 @@
     <p>請選擇 剪刀 石頭 布</p>
     
     <button onclick='
-        const randomNum = Math.random()*3;
-        let computerChoice = "";
-        console.log(randomNum);
-        if (0<=randomNum && randomNum<1) {
-            computerChoice = "剪刀";
-        } else if (1<=randomNum && randomNum<2) {
-            computerChoice = "石頭";
-        } else {
-            computerChoice = "布";
-        }
+        // 區域變數 -> 一離開引號、大括號後就沒有作用了
+        const computerChoice = generateComputerChoice()
 
         if (computerChoice === "剪刀") {
             alert(`你出剪刀，電腦出${computerChoice}，此局平手!`)
@@ -38,16 +30,8 @@
     '>剪刀</button>
 
     <button onclick='
-        const randomNum = Math.random()*3;
-        let computerChoice = "";
-        console.log(randomNum)
-        if (0<=randomNum && randomNum<1) {
-            computerChoice = "剪刀";
-        } else if (1<=randomNum && randomNum<2) {
-            computerChoice = "石頭";
-        } else {
-            computerChoice = "布";
-        }
+        // 區域變數
+        const computerChoice = generateComputerChoice()
 
         if (computerChoice === "剪刀") {
             alert(`你出石頭，電腦出${computerChoice}，你贏了!`)
@@ -58,16 +42,8 @@
         }
     '>石頭</button>
     <button onclick='
-        const randomNum = Math.random()*3;
-        let computerChoice = "";
-        console.log(randomNum)
-        if (0<=randomNum && randomNum<1) {
-            computerChoice = "剪刀";
-        } else if (1<=randomNum && randomNum<2) {
-            computerChoice = "石頭";
-        } else {
-            computerChoice = "布";
-        }
+        // 區域變數
+        const computerChoice = generateComputerChoice()
 
         if (computerChoice === "剪刀") {
             alert(`你出布，電腦出${computerChoice}，你輸了!`)
@@ -79,6 +55,26 @@
     '>布</button>
 
     <script>
+        // 全域變數
+        let a = 0;
+        console.log(a);
+
+        // 函數(函式) function
+        // 函數: 重複使用一段程式碼
+        // 功能: 製作好功能 想使用就拿出來用
+        function generateComputerChoice() {
+            const randomNum = Math.random()*3;
+            let computerChoice = "";
+            console.log(randomNum);
+            if (0<=randomNum && randomNum<1) {
+                computerChoice = "剪刀";
+            } else if (1<=randomNum && randomNum<2) {
+                computerChoice = "石頭";
+            } else {
+                computerChoice = "布";
+            }
+            return computerChoice;
+        }
     </script>
 </body>
 </html>
