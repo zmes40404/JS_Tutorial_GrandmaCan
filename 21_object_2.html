@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>測驗</title>
+        <style>
+            button{
+                font-size:25px;
+                margin-right:10px;
+            }
+            p{
+                font-size: 25px;
+                display: inline-block;
+                margin-right:10px;
+            }
+            img{
+                height: 200px;
+                display: block;
+                margin-top:50px;
+            }
+        </style>
+    </head>
+    <body>
+        <button onclick="
+            console.log(cart.totalPrice);
+        ">購物車總額</button>
+        <button onclick="
+            cart.productNum = 0;
+            cart.product1.num = 0;
+            cart.product2.num = 0;
+            cart.totalPrice = 0;
+            console.log('已清空購物車');
+            cart.showCart();
+        ">清空購物車</button>
+
+        <img src="product_images/product_image1.jpg">
+        <p>$100</p>
+        <button onclick="
+            cart.productNum++;
+            cart.product1.num++;
+            cart.totalPrice += 100;
+            cart.showCart();
+        ">加入購物車</button>
+
+        <img src="product_images/product_image2.jpg">
+        <p>$200</p>
+        <button onclick="
+            cart.productNum++;
+            cart.product2.num++;
+            cart.totalPrice += 200; /* = 'totalPrice += 200', */
+            cart.showCart();
+        ">加入購物車</button>
+        
+
+        <script>
+           let cart = {
+                productNum: 0,
+                // 物件中的value可以再加入物件
+                product1: {
+                    num: 0,
+                    name: "海底撈泡麵",
+                    price: 100
+                },
+                product2: {
+                    num: 0,
+                    name: "養氣人蔘",
+                    price: 200
+                },
+                totalPrice: 0,
+                // 物件中的value也可以是function, 物件中的函數 -> 方法
+                showCart: function showCart() {
+                    console.log(`目前商品數: ${cart.productNum}`);
+                    console.log(`${cart.product1.name}: ${cart.product1.num}`);
+                    console.log(`${cart.product2.name}: ${cart.product2.num}`);
+                    console.log(`目前購物車總額: ${cart.totalPrice}`);
+                }
+           };
+
+            cart.showCart()      // 呼叫物件中的方法，常見的console也是一個object，.log()就是這個物件的方法
+
+        //    console.log(cart['totalPrice']);     // "cart['totalPrice']" = "cart.totalPrice"，注意!!如果用array的方式表達，裡面要加入string
+        //    console.log(cart.product1.name);
+
+           // 物件 object
+           // 讓我們把資料結合在一起
+
+        //    let product = {
+        //         name: "海底撈泡麵",
+        //         price: 100
+        //    };
+
+        //    console.log(product.name);
+        //    product.price = 200; // 修改物件product中price屬性的值
+
+        //    product.expiredDate = "2026/06/06"; // 把物件加上原本沒有的屬性
+
+        //    delete product.price; // 刪除屬性
+
+        //    console.log(typeof product);
+        </script>
+    </body>
+</html>
