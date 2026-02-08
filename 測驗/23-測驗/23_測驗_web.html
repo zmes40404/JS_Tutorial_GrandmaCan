@@ -57,7 +57,7 @@
         <script>
             let cart = JSON.parse(localStorage.getItem("cart"));        // 網頁每次重新整理都先去讀取原本localStorage中的儲存紀錄"cart"並轉為JavaScript物件
             
-            if (cart===null) {          // 如果剛清除完購物車後又重新整理網頁的話，當cart不存在又去讀取就會報錯"Uncaught Type Error: Cannot read properties of null (reading productNum)"，所以要加一個判斷如果cart為null的話要重新create一個物件(預設的值)
+            if (!cart) {          // 如果剛清除完購物車後又重新整理網頁的話，當cart不存在又去讀取就會報錯"Uncaught Type Error: Cannot read properties of null (reading productNum)"，所以要加一個判斷如果cart為null的話要重新create一個物件(預設的值)
                 cart = {
                     productNum: 0,
                     prodcut1: {
